@@ -18,6 +18,9 @@
 	<link href="css/owl.carousel.css" rel="stylesheet">
 	<link href="css/animate.css" rel="stylesheet">
 	<link href="css/style.css" rel="stylesheet">
+	
+	<!-- Galeria FEATHERLIGHT -->
+	<link href="css/featherlight.min.css" title="Featherlight Styles" />
 </head>
 <body>
 
@@ -302,19 +305,33 @@
 
 				<!-- Portfolio item start -->
 				<li class="work-item illustration webdesign">
-					<a href="portfolio-single-1.html">
+					<a class="popup-modal" href="#acero">
 						<div class="work-image">
-							<img src="images/work-1.jpg" alt="">
+							<img src="images/acero.jpeg" height="768" width="1024" alt="acero">
 						</div>
 						<div class="work-caption font-alt">
-							<h3 class="work-title">Corporate Identity</h3>
+							<h3 class="work-title">Cañerías Industriales</h3>
 							<div class="work-descr">
-								Illustration
+								Cañerías para la Industria
 							</div>
 						</div>
 					</a>
 				</li>
 				<!-- Portfolio item end -->
+
+				<!-- GALERÍA POPUP INICIO -->
+				<div class="white-popup-block mfp-hide" id="acero">
+                  <h1>Sed scelerisque</h1>
+                  <p>Nullam ac rhoncus. Aliquam adipiscing eros non elit imperdiet congue. Etiam at ligula sit amet arcu laoreet consequat. Duis dictum lorem metus, vitae dapibus risus imperdiet nec. Suspendisse molestie lorem odio, sit amet. Adipiscing eros non elit imperdiet congue tiam at ligula sit amet arcu.</p>
+                  <a href="#" class="popup-modal-dismiss"><button type="button">×</button></a>
+                  <ul>
+                  	<li><img src="images/cb_scout2.png" height="214" width="1028" alt=""></li>
+                  	<li><img src="images/acero.jpeg" height="768" width="1024" alt=""></li>
+                  	<li><img src="images/fresadora.jpg" height="1200" width="1800" alt=""></li>
+                  	<li><img src="images/metalmecanica.jpg" height="682" width="1024" alt=""></li>
+                  </ul>
+                </div><!-- #modal-content-8 -->
+				<!-- GALERÍA POPUP END -->
 
 				<!-- Portfolio item start -->
 				<li class="work-item marketing photography">
@@ -1325,8 +1342,17 @@
 			</div>
 		</footer>
 		<!-- Footer end -->
-	
-	</div>
+		<div>
+			<a class="popup-modal" href="#test-modal">Open modal</a>
+
+			<div id="test-modal" class="white-popup-block mfp-hide">
+				<h1>Modal dialog</h1>
+				<p>You won't be able to dismiss this by usual means (escape or
+					click button), but you can close it programatically based on
+					user choices or actions.</p>
+				<p><a class="popup-modal-dismiss" href="#">Dismiss</a></p>
+			</div>
+		</div>
 	<!-- Wrapper start -->
 	
 	<!-- Scroll-up -->
@@ -1353,6 +1379,23 @@
 	<script src="js/owl.carousel.min.js"></script>
 	<script src="js/contact.js"></script>
 	<script src="js/custom.js"></script>
+	<script>
+	$(function () {
+		$('.popup-modal').magnificPopup({
+			type: 'inline',
+			preloader: false,
+			focus: '#username',
+			modal: true
+		});
+		$(document).on('click', '.popup-modal-dismiss', function (e) {
+			e.preventDefault();
+			$.magnificPopup.close();
+		});
+	});
+	</script>
+
+	<!-- JS FEATHERLIGHT -->
+	<script src="js/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
 
 </body>
 </html>
